@@ -1,7 +1,7 @@
 import conf from "../conf/conf";
 import { Client, ID, Databases, Query } from "appwrite";
 
-export class service {
+export class Service {
   client = new Client();
   Databases;
   bucket;
@@ -112,14 +112,11 @@ export class service {
     }
   }
 
-  getFilePreview(fileId){
-    this.bucket.getFilePreview(
-        conf.appwriteBucketId,
-        fileId
-    )
+  getFilePreview(fileId) {
+    this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
   }
 }
 
-const service = new service();
+const service = new Service();
 
 export default service;
